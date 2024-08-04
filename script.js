@@ -607,5 +607,10 @@ document.getElementById("user-input").addEventListener("keypress", function(even
     }
 });
 
+// Add event listener for Send button
+document.getElementById("send-button").addEventListener("click", function() {
+    getResponse();
+});
+
 // Add the initial bot message when the page loads
 window.onload = addInitialBotMessage;
