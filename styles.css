@@ -10,13 +10,6 @@ body {
     height: 100vh;
 }
 
-#chat-header h1 {
-    font-family: 'Ravie', sans-serif;
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-}
-
 @font-face {
     font-family: 'Ravie';
     src: url('fonts/ravie.woff2') format('woff2'),
@@ -25,6 +18,12 @@ body {
     font-style: normal;
 }
 
+#chat-header {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center; /* Center align header text */
+}
+
 #chat-header h1 {
     font-family: 'Ravie', sans-serif;
     font-size: 24px;
@@ -32,23 +31,14 @@ body {
     margin: 0;
 }
 
-
-#chat-header {
-    margin-bottom: 20px;
-}
-
-#chat-header h1 {
-    font-size: 24px;
-    color: #333;
-    margin: 0;
-}
-
 #chat-container {
-    width: 400px;
+    width: 90%; /* Make container responsive */
+    max-width: 400px; /* Maximum width to maintain layout on larger screens */
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    box-sizing: border-box;
 }
 
 #chat-output {
@@ -63,7 +53,7 @@ body {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
-    max-width: 100%; /* Ensure the message boxes fit the container */
+    max-width: 100%;
 }
 
 .bot-message img,
@@ -75,11 +65,11 @@ body {
 
 .bot-message span,
 .user-message span {
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
     padding: 10px 15px;
-    max-width: 70%; /* Adjust width to fit text */
-    word-wrap: break-word; /* Ensure long words wrap correctly */
-    display: inline-block; /* Fit the text */
+    max-width: 70%;
+    word-wrap: break-word;
+    display: inline-block;
 }
 
 .bot-message span {
@@ -87,8 +77,8 @@ body {
 }
 
 .user-message span {
-    background-color: #f5f5f5; /* Light ash color */
-    border: 1px solid #ddd; /* Optional: adds a light border for better visibility */
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
 }
 
 .user-message {
@@ -104,6 +94,7 @@ body {
 #chat-controls {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of controls on smaller screens */
 }
 
 #user-input {
@@ -127,3 +118,36 @@ body {
 #send-button:hover {
     background-color: #0056b3;
 }
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    #chat-header h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    #chat-container {
+        width: 95%; /* Increase container width on smaller screens */
+        padding: 15px; /* Adjust padding for better fit */
+    }
+
+    #send-button {
+        padding: 8px 12px;
+        margin-left: 5px;
+    }
+
+    #user-input {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    #chat-header h1 {
+        font-size: 18px; /* Further adjust font size for very small screens */
+    }
+
+    #chat-container {
+        width: 100%;
+        padding: 10px; /* Further adjust padding for very small screens */
+    }
+}
+
